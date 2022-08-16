@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'dart:async';
 
@@ -16,17 +16,17 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     super.initState();
-    // Timer(
-    //     const Duration(seconds: 3),
-    //     () => Navigator.pushReplacement(
-    //         context, MaterialPageRoute(builder: (context) => const Home())));
+    Timer(
+        const Duration(seconds: 8),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const Home())));
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF70D3E8),
+      backgroundColor: Color(0xFF18A0D6),
       body: Column(
         children: [
           SizedBox(
