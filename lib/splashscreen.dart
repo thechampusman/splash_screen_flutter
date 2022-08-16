@@ -26,7 +26,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF169FD8),
+      backgroundColor: Color(0xFF70D3E8),
       body: Column(
         children: [
           SizedBox(
