@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:splash_screen_thechamp/home.dart';
 
 class Splash_Screen extends StatefulWidget {
-  const Splash_Screen({Key? key}) : super(key: key);
+  const Splash_Screen({Key key}) : super(key: key);
 
   @override
   State<Splash_Screen> createState() => _Splash_ScreenState();
