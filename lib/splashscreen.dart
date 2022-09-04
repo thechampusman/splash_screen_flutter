@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:splash_screen_thechamp/home.dart';
 
 class Splash_Screen extends StatefulWidget {
@@ -16,8 +17,10 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     super.initState();
+    print("Height ==> ${1.h}");
+    print("Width ==> ${1.w}");
     Timer(
-        const Duration(seconds: 8),
+        const Duration(seconds: 10),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => const Home())));
   }
@@ -30,10 +33,10 @@ class _Splash_ScreenState extends State<Splash_Screen> {
       body: Column(
         children: [
           SizedBox(
-            height: size.height / 6,
+            height: 16.6434.h,
           ),
           Container(
-            height: size.height / 1.5,
+            height: 64.01310.h,
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 image: DecorationImage(
