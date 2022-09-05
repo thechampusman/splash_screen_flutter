@@ -38,23 +38,24 @@ class Home extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: "AnekTelugu ",
                         fontWeight: FontWeight.bold,
-                        fontSize: 3.20065.h),
+                        fontSize: 4.20065.h),
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 2.h,
-            ),
 
-            MasonryGridView.count(
-                shrinkWrap: true,
-                physics: ScrollPhysics(),
-                itemCount: test.length,
-                crossAxisCount: 2,
-                itemBuilder: (context, index) {
-                  return Padding(
-                      padding: const EdgeInsets.only(bottom: 50),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: vertcal1.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 25),
                       child: Stack(children: [
                         // Container(
                         //   height: 38.40786.h,
@@ -64,54 +65,146 @@ class Home extends StatelessWidget {
                         // ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: 50, left: 10, right: 10),
+                              top: 50, left: 15, right: 15),
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(50)),
-                            height: 29.32629.h,
-                            width: 42.37963.w,
+                            height: 30.32629.h,
+                            width: 48.37963.w,
                             child: Padding(
                               padding: const EdgeInsets.only(top: 120),
                               child: Column(
                                 children: [
                                   Text(
-                                    test[index].title,
+                                    vertcal1[index].title,
                                     style: TextStyle(
                                         fontFamily: "AnekTelugu ",
                                         fontWeight: FontWeight.bold,
                                         fontSize: 3.18473.h),
                                   ),
                                   Spacer(),
-                                  InkWell(
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 35),
-                                      child: Image.asset(
-                                        "assets/images/subscribe.png",
-                                        height: 3.864996.h,
-                                      ),
-                                    ),
-                                  )
+                                  ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                          primary:
+                                              Color(vertcal1[index].btcolor)),
+                                      onPressed: () {},
+                                      child: Text(vertcal1[index].bttitle))
+                                  // InkWell(
+                                  //   child: Padding(
+                                  //     padding:
+                                  //         const EdgeInsets.only(bottom: 35),
+                                  //     child: Image.asset(
+                                  //       "assets/images/subscribe.png",
+                                  //       height: 3.864996.h,
+                                  //     ),
+                                  //   ),
+                                  // )
                                 ],
                               ),
                             ),
                           ),
                         ),
                         Positioned(
-                            left: 6.09259.w,
+                            top: 2.3044719.h,
+                            left: 9.09259.w,
                             child: ClipRRect(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               child: Image.asset(
-                                test[index].pngPath,
+                                vertcal1[index].pngPath,
                                 height: 18.2039.h,
                                 //fit: BoxFit.fill,
-                                width: 35.19447.w,
+                                width: 32.19447.w,
                               ),
                             ))
-                      ]));
-                }),
+                      ]),
+                    );
+                  },
+                )),
+                Expanded(
+                    child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: vertical2.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              bottom: 25, top: index == 0 ? 75 : 0),
+                          child: Stack(children: [
+                            // Container(
+                            //   height: 38.40786.h,
+                            //   width: 47.37966.w,
+                            //   color: Color(0xFFE8EBE8),
+                            //   //E8EBE8
+                            // ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 50, left: 15, right: 15),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50)),
+                                height: 30.32629.h,
+                                width: 48.37963.w,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 120),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        vertical2[index].title,
+                                        style: TextStyle(
+                                            fontFamily: "AnekTelugu ",
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 3.18473.h),
+                                      ),
+                                      Spacer(),
+                                      ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(
+                                                  vertical2[index].btcolor)),
+                                          onPressed: () {},
+                                          child: Text(vertical2[index].bttitle))
+                                      // InkWell(
+                                      //   child: Padding(
+                                      //     padding:
+                                      //         const EdgeInsets.only(bottom: 35),
+                                      //     child: Image.asset(
+                                      //       "assets/images/subscribe.png",
+                                      //       height: 3.864996.h,
+                                      //     ),
+                                      //   ),
+                                      // )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                                top: 2.3044719.h,
+                                left: 9.09259.w,
+                                child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  child: Image.asset(
+                                    vertical2[index].pngPath,
+                                    height: 18.2039.h,
+                                    //fit: BoxFit.fill,
+                                    width: 32.19447.w,
+                                  ),
+                                ))
+                          ]),
+                        ),
+                      ],
+                    );
+                  },
+                )),
+              ],
+            )
+
             // ListView.builder(
             //     shrinkWrap: true,
             //     physics: NeverScrollableScrollPhysics(),
@@ -185,11 +278,34 @@ class Home extends StatelessWidget {
   }
 }
 
-List<Place> test = [
-  Place(pngPath: "assets/images/youtube.png", title: "YouTube"),
-  Place(pngPath: "assets/images/github.png", title: "Github"),
-  Place(pngPath: "assets/images/instagram.png", title: "Instagram"),
-  Place(pngPath: "assets/images/telegram.png", title: "Telegram"),
+List<Place> vertical2 = [
+  Place(
+      pngPath: "assets/images/youtube.png",
+      title: "YouTube",
+      bttitle: "SUBCRIBE",
+      btcolor: 0XFFE51D20),
+
+  Place(
+      pngPath: "assets/images/instagram.png",
+      title: "Instagram",
+      bttitle: "Follow",
+      btcolor: 0XFFCB6619),
+
+//  StarClass("path","tirle"),
+//  StarClass("path","tirle"),
+];
+List<Place> vertcal1 = [
+  Place(
+      pngPath: "assets/images/github.png",
+      title: "Github",
+      bttitle: "REPO",
+      btcolor: 0XFF2C2C2C),
+
+  Place(
+      pngPath: "assets/images/telegram.png",
+      title: "Telegram",
+      bttitle: "Open",
+      btcolor: 0XFF3DC4E5),
 //  StarClass("path","tirle"),
 //  StarClass("path","tirle"),
 ];
