@@ -17,8 +17,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     super.initState();
-    print("Height ==> ${1.h}");
-    print("Width ==> ${1.w}");
+
     Timer(
         const Duration(seconds: 10),
         () => Navigator.pushReplacement(
@@ -31,19 +30,9 @@ class _Splash_ScreenState extends State<Splash_Screen> {
     return Scaffold(
       backgroundColor: Color(0xFF18A0D6),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 16.6434.h,
-          ),
-          Container(
-            height: 64.01310.h,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/tutorial.png'),
-              fit: BoxFit.fill,
-            )),
-          ),
+          Image.asset("assets/images/tutorial.png"),
         ],
       ),
     );
